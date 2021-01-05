@@ -23,9 +23,9 @@ namespace Special_Submission.Controllers
             return db.AeroplaneDetails.AddUser(aeroplanedetail);
 
         }
-        public static AeroplaneDetail GetUser(string username)
+        public static AeroplaneDetail GetUser(string PlaneName)
         {
-            return db.AeroplaneDetails.GetUser(username);
+            return db.AeroplaneDetails.GetUser(PlaneName);
         }
         public static bool UpdateUser(dynamic u)
         {

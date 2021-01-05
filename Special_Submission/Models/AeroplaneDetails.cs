@@ -38,7 +38,7 @@ namespace Special_Submission.Models
             {
                 AeroplaneDetail aeroplanedetail = new AeroplaneDetail();
                 aeroplanedetail = new AeroplaneDetail();
-                aeroplanedetail.PlaneID = reader.GetInt32(reader.GetOrdinal("PlaneID"));
+                aeroplanedetail.PlaneID = reader.GetString(reader.GetOrdinal("PlaneID"));
                 aeroplanedetail.PlaneName = reader.GetString(reader.GetOrdinal("PlaneName"));
                 aeroplanedetail.FlightNumber = reader.GetString(reader.GetOrdinal("FlightNumber"));
                 aeroplanedetail.Source = reader.GetString(reader.GetOrdinal("Source"));
@@ -58,7 +58,7 @@ namespace Special_Submission.Models
             while (reader.Read())
             {
                 aeroplanedetail = new AeroplaneDetail();
-                aeroplanedetail.PlaneID = reader.GetInt32(reader.GetOrdinal("PlaneID"));
+                aeroplanedetail.PlaneID = reader.GetString(reader.GetOrdinal("PlaneID"));
                 aeroplanedetail.PlaneName = reader.GetString(reader.GetOrdinal("PlaneName"));
                 aeroplanedetail.FlightNumber = reader.GetString(reader.GetOrdinal("FlightNumber"));
                 aeroplanedetail.Source = reader.GetString(reader.GetOrdinal("Source"));
@@ -71,7 +71,7 @@ namespace Special_Submission.Models
         public bool UpdateUser(AeroplaneDetail aeroplanedetail)
         {
             conn.Open();
-            string query = String.Format("UPDATE Aeroplane_Details SET PlaneName='{1}', FlightNumber='{2}', Source='{3}', Destination='{4}' WHERE PlaneName='{1}'", aeroplanedetail.PlaneName);
+            string query = String.Format("UPDATE Aeroplane_Details SET PlaneID='{0}', PlaneName='{1}', FlightNumber='{2}', Source='{3}', Destination='{4}' WHERE PlaneName='{1}'", aeroplanedetail.PlaneName);
             SqlCommand cmd = new SqlCommand(query, conn);
             int r = cmd.ExecuteNonQuery();
             conn.Close();

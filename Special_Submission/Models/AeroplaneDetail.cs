@@ -8,7 +8,7 @@ namespace Special_Submission.Models
 {
     public class AeroplaneDetail
     {
-        public int PlaneID { get; set; }
+        public string PlaneID { get; set; }
         public string  PlaneName { get; set; }
         public string FlightNumber { get; set; }
         public string Source { get; set; }

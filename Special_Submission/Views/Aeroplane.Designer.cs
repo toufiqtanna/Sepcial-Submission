@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.btnAdd = new System.Windows.Forms.Button();
-            this.tBPlaneName = new System.Windows.Forms.TextBox();
             this.lblPlaneName = new System.Windows.Forms.Label();
-            this.tBPanleID = new System.Windows.Forms.TextBox();
+            this.tBPlaneID = new System.Windows.Forms.TextBox();
             this.lblPlaneID = new System.Windows.Forms.Label();
             this.LblFlightNumber = new System.Windows.Forms.Label();
             this.lblSource = new System.Windows.Forms.Label();
             this.lblDestination = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.tBPlaneName = new System.Windows.Forms.TextBox();
             this.tBFlightNumber = new System.Windows.Forms.TextBox();
             this.tBSource = new System.Windows.Forms.TextBox();
             this.tBDestination = new System.Windows.Forms.TextBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -57,14 +57,6 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // tBPlaneName
-            // 
-            this.tBPlaneName.Enabled = false;
-            this.tBPlaneName.Location = new System.Drawing.Point(117, 63);
-            this.tBPlaneName.Name = "tBPlaneName";
-            this.tBPlaneName.Size = new System.Drawing.Size(191, 20);
-            this.tBPlaneName.TabIndex = 11;
-            // 
             // lblPlaneName
             // 
             this.lblPlaneName.AutoSize = true;
@@ -75,12 +67,12 @@
             this.lblPlaneName.TabIndex = 10;
             this.lblPlaneName.Text = "Plane Name:";
             // 
-            // tBPanleID
+            // tBPlaneID
             // 
-            this.tBPanleID.Location = new System.Drawing.Point(117, 34);
-            this.tBPanleID.Name = "tBPanleID";
-            this.tBPanleID.Size = new System.Drawing.Size(191, 20);
-            this.tBPanleID.TabIndex = 9;
+            this.tBPlaneID.Location = new System.Drawing.Point(117, 34);
+            this.tBPlaneID.Name = "tBPlaneID";
+            this.tBPlaneID.Size = new System.Drawing.Size(191, 20);
+            this.tBPlaneID.TabIndex = 9;
             // 
             // lblPlaneID
             // 
@@ -122,30 +114,6 @@
             this.lblDestination.TabIndex = 16;
             this.lblDestination.Text = "Destination:";
             // 
-            // tBFlightNumber
-            // 
-            this.tBFlightNumber.Enabled = false;
-            this.tBFlightNumber.Location = new System.Drawing.Point(117, 100);
-            this.tBFlightNumber.Name = "tBFlightNumber";
-            this.tBFlightNumber.Size = new System.Drawing.Size(191, 20);
-            this.tBFlightNumber.TabIndex = 17;
-            // 
-            // tBSource
-            // 
-            this.tBSource.Enabled = false;
-            this.tBSource.Location = new System.Drawing.Point(117, 133);
-            this.tBSource.Name = "tBSource";
-            this.tBSource.Size = new System.Drawing.Size(191, 20);
-            this.tBSource.TabIndex = 18;
-            // 
-            // tBDestination
-            // 
-            this.tBDestination.Enabled = false;
-            this.tBDestination.Location = new System.Drawing.Point(117, 171);
-            this.tBDestination.Name = "tBDestination";
-            this.tBDestination.Size = new System.Drawing.Size(191, 20);
-            this.tBDestination.TabIndex = 19;
-            // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.Yellow;
@@ -168,13 +136,42 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             // 
+            // tBPlaneName
+            // 
+            this.tBPlaneName.Location = new System.Drawing.Point(117, 63);
+            this.tBPlaneName.Name = "tBPlaneName";
+            this.tBPlaneName.Size = new System.Drawing.Size(191, 20);
+            this.tBPlaneName.TabIndex = 23;
+            // 
+            // tBFlightNumber
+            // 
+            this.tBFlightNumber.Location = new System.Drawing.Point(117, 93);
+            this.tBFlightNumber.Name = "tBFlightNumber";
+            this.tBFlightNumber.Size = new System.Drawing.Size(191, 20);
+            this.tBFlightNumber.TabIndex = 24;
+            // 
+            // tBSource
+            // 
+            this.tBSource.Location = new System.Drawing.Point(117, 130);
+            this.tBSource.Name = "tBSource";
+            this.tBSource.Size = new System.Drawing.Size(191, 20);
+            this.tBSource.TabIndex = 25;
+            // 
+            // tBDestination
+            // 
+            this.tBDestination.Location = new System.Drawing.Point(117, 168);
+            this.tBDestination.Name = "tBDestination";
+            this.tBDestination.Size = new System.Drawing.Size(191, 20);
+            this.tBDestination.TabIndex = 26;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(339, 34);
+            this.dataGridView1.Location = new System.Drawing.Point(371, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(597, 368);
-            this.dataGridView1.TabIndex = 22;
+            this.dataGridView1.Size = new System.Drawing.Size(573, 390);
+            this.dataGridView1.TabIndex = 27;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Aeroplane
             // 
@@ -182,18 +179,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(956, 414);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.tBDestination);
             this.Controls.Add(this.tBSource);
             this.Controls.Add(this.tBFlightNumber);
+            this.Controls.Add(this.tBPlaneName);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.lblDestination);
             this.Controls.Add(this.lblSource);
             this.Controls.Add(this.LblFlightNumber);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.tBPlaneName);
             this.Controls.Add(this.lblPlaneName);
-            this.Controls.Add(this.tBPanleID);
+            this.Controls.Add(this.tBPlaneID);
             this.Controls.Add(this.lblPlaneID);
             this.Name = "Aeroplane";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -208,18 +205,18 @@
         #endregion
 
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox tBPlaneName;
         private System.Windows.Forms.Label lblPlaneName;
-        private System.Windows.Forms.TextBox tBPanleID;
+        private System.Windows.Forms.TextBox tBPlaneID;
         private System.Windows.Forms.Label lblPlaneID;
         private System.Windows.Forms.Label LblFlightNumber;
         private System.Windows.Forms.Label lblSource;
         private System.Windows.Forms.Label lblDestination;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.TextBox tBPlaneName;
         private System.Windows.Forms.TextBox tBFlightNumber;
         private System.Windows.Forms.TextBox tBSource;
         private System.Windows.Forms.TextBox tBDestination;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
