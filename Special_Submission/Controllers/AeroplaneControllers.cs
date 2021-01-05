@@ -32,14 +32,11 @@ namespace Special_Submission.Controllers
             AeroplaneDetail aeroplanedetail = new AeroplaneDetail();
             aeroplanedetail.PlaneID = u.PlaneID;
             aeroplanedetail.PlaneName = u.PlaneName;
-            aeroplanedetail.FlightNumber = u.FlightNumber;
-            aeroplanedetail.Source = u.Source;
-            aeroplanedetail.Destination = u.Destination;
-            return db.AeroplaneDetails.AddUser(aeroplanedetail);
+            return db.AeroplaneDetails.UpdateUser(aeroplanedetail);
         }
-        public static bool DeleteUser(string PlaneName)
+        public static bool DeleteUser(string PlaneID)
         {
-            return db.AeroplaneDetails.DeleteUser(PlaneName);
+            return db.AeroplaneDetails.DeleteUser(PlaneID);
         }
         public static ArrayList GetAllUsers()
         {

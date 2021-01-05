@@ -48,10 +48,10 @@ namespace Special_Submission.Models
             conn.Close();
             return aeroplanedetails;
         }
-        public AeroplaneDetail GetUser(string PlaneName)
+        public AeroplaneDetail GetUser(string PlaneID)
         {
             conn.Open();
-            string query = String.Format("SELECT * FROM Aeroplane_Details WHERE PlaneName='{1}'", PlaneName);
+            string query = string.Format("SELECT * FROM Aeroplane_Details WHERE PlaneID='{0}'", PlaneID);
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataReader reader = cmd.ExecuteReader();
             AeroplaneDetail aeroplanedetail = null;
@@ -67,21 +67,26 @@ namespace Special_Submission.Models
             conn.Close();
             return aeroplanedetail;
         }
-
         public bool UpdateUser(AeroplaneDetail aeroplanedetail)
+        //public bool UpdateUser(AeroplaneDetail aeroplanedetail)
         {
-            conn.Open();
-            string query = String.Format("UPDATE Aeroplane_Details SET PlaneID='{0}', PlaneName='{1}', FlightNumber='{2}', Source='{3}', Destination='{4}' WHERE PlaneName='{1}'", aeroplanedetail.PlaneName);
+            //conn.Open();
+            string query = "UPDATE Aeroplane_Details SET PlaneName=@PlaneName WHERE PlaneID=@PlaneID";
             SqlCommand cmd = new SqlCommand(query, conn);
+
+
+            cmd.Parameters.AddWithValue("@PlaneName", aeroplanedetail.PlaneID);
+            cmd.Parameters.AddWithValue("@PlaneID", aeroplanedetail.PlaneName);
+            conn.Open();
             int r = cmd.ExecuteNonQuery();
             conn.Close();
             if (r > 0) return true;
             return false;
         }
-        public bool DeleteUser(string PlaneName)
+        public bool DeleteUser(string PlaneID)
         {
             conn.Open();
-            string query = String.Format("DELETE FROM Aeroplane_Details WHERE PlaneName='{1}'", PlaneName);
+            string query = String.Format("DELETE FROM Aeroplane_Details WHERE PlaneID='{0}'", PlaneID);
             SqlCommand cmd = new SqlCommand(query, conn);
             int r = cmd.ExecuteNonQuery();
             conn.Close();
